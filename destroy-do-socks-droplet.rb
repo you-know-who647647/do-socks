@@ -3,7 +3,7 @@ require 'yaml'
 require 'json'
 
 CONF_FILE = "conf.yaml"
-existing_socks_droplets = JSON.parse(`./get-do-socks-info.rb`)
+existing_socks_droplets = JSON.parse(`get-do-socks-info`)
 
 def delete_droplet(droplet)
   puts "Deleting droplet with id #{droplet["id"]} and IP #{droplet["public_ip_v4"]}..."

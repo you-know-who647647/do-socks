@@ -4,7 +4,7 @@ require 'json'
 
 CONF_FILE = "conf.yaml"
 conf = YAML.load(File.read(CONF_FILE))
-existing_socks_droplets = JSON.parse(`./get-do-socks-info.rb`)
+existing_socks_droplets = JSON.parse(`get-do-socks-info`)
 if existing_socks_droplets["size"] != 0
   puts "Error: Socks droplet already exists. Please run get-do-socks-info for\
 details on the existing droplet"
