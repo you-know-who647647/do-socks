@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 require 'yaml'
+require 'json'
 
 CONF_FILE = "conf.yaml"
 ID_IDX = 0
@@ -23,4 +24,4 @@ outputs.each do | output |
   droplets_data[:droplets] << droplet_info
 end
 
-puts droplets_data
+puts droplets_data.to_json
