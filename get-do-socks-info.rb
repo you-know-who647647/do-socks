@@ -2,11 +2,12 @@
 require 'yaml'
 require 'json'
 
-CONF_FILE = "conf.yaml"
+CONF_FILE = "#{File.dirname(__FILE__)}/conf.yaml"
 ID_IDX = 0
 NAME_IDX = 1
 REGION_IDX = 2
 PUBLIC_IP_V4_IDX = 3
+
 
 conf = YAML.load(File.read(CONF_FILE))
 outputs = `doctl compute droplet list --tag-name #{conf["socks_tag"]} --format ID,Name,Region,PublicIPv4 --no-header`.split("\n")

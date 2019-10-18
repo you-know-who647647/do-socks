@@ -2,7 +2,7 @@
 require 'yaml'
 require 'json'
 
-CONF_FILE = "conf.yaml"
+CONF_FILE = "#{File.dirname(__FILE__)}/conf.yaml"
 conf = YAML.load(File.read(CONF_FILE))
 existing_socks_droplets = JSON.parse(`get-do-socks-info`)
 if existing_socks_droplets["size"] != 0

@@ -2,7 +2,7 @@
 require 'yaml'
 require 'json'
 
-CONF_FILE = "conf.yaml"
+CONF_FILE = "#{File.dirname(__FILE__)}/conf.yaml"
 existing_socks_droplets = JSON.parse(`get-do-socks-info`)
 
 def delete_droplet(droplet)
